@@ -44,7 +44,3 @@ When you pass a lat, lng coordinate, this service hits the Google Maps API, and 
 Then, it goes to our database and fetches all the cities in that country. It loops those cities, calculating a haversine distance from the given coordinate to the coordinate of that city, and checks if that distance falls within the range of that city. If so, it returns the image of that city.
 
 If it doesn't match any cities, it will fallback to providing the image of that country instead.
-
-### TODO's
-- We should just return the actual image data instead of a path to the image, for convenience's sake.
-- Needs to have a caching mechanism built into it so it's not doing a whole bunch of hard work when you request the same image over and over again. This works in with the above point about actually returning the image rather than a path - can cache the image data, and maybe match hashes of lat, lng coordinates to an image (or something along those sorts of lines).
